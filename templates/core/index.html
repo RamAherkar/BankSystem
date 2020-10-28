@@ -3,6 +3,38 @@
 {% block head_title %}Banking System{% endblock %}
 
 {% block content %}
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("img").addClass("new");
+            });
+          var ctx = document.getElementById('myChart');
+
+          var stars = [18, 20, 20, 20, 22];
+          var frameworks = ['SBI', 'Punjab-National', 'Muthoot', 'Hyper', 'PayPaL'];
+
+          var myChart = new Chart(ctx, {
+                  type: 'doughnut',
+                  data: {
+                      labels: frameworks,
+                      datasets: [{
+                          label: 'Evolution Of PaypaL in past years',
+                          data: stars,
+                        backgroundColor: [
+                       "rgba(50, 168, 147, 0.6)",
+                       "rgba(90, 239, 10, 0.5)",
+                       "rgba(10, 239, 186, 0.5)",
+                       "rgba(239, 166, 10, 0.5)",
+                       "rgba(10, 65, 239, 0.6)"
+                       ]
+                      }]
+                  },
+
+
+});
+    </script>
+
     <div class="container mx-auto flex flex-col md:flex-row items-center my-12 md:my-24">
         <!--Left Col-->
         <div class="flex flex-col w-full lg:w-1/2 justify-center items-start pt-12 pb-24 px-6">
@@ -15,5 +47,9 @@
         <div class="w-full lg:w-1/2 lg:py-6 text-center">
             <h1 style="font-size: 6rem" class="font-black text-gray-800">Bank of SGGS</h1>
         </div>
+        
     </div>
+
+
+
 {% endblock %}
